@@ -1,0 +1,60 @@
+query Search($q: String) {
+  SearchUsers(q: $q) {
+    name
+    username
+    totalBooks
+    books(limit: 3) {
+      title
+      slug
+      pages(limit: 1, order_by: "asc", parent_id: "not_null") {
+        id
+        title
+        parent_id
+      }
+    }
+  }
+  SearchBooks(q: $q) {
+    users {
+      name
+      username
+    }
+    title
+    slug
+    pages(limit: 1, order_by: "asc", parent_id: "not_null") {
+      id
+      title
+      parent_id
+    }
+  }
+  SearchPages(q: $q) {
+    id
+    title
+    parent_id
+    page_no
+    book {
+      title
+      slug
+      users {
+        name
+        username
+      }
+    }
+  }
+  SearchBlocks(q: $q) {
+    page {
+      id
+      title
+      parent_id
+      book {
+        title
+        slug
+        users {
+          name
+          username
+        }
+      }
+    }
+    content
+    page_no
+  }
+}

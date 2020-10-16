@@ -1,0 +1,35 @@
+@supports (position: sticky) {
+  @media (min-width: 1024px) {
+    .sticky\?lg\:h-\(screen-24\) {
+      height: calc(100vh - 6rem);
+    }
+  }
+}
+
+/* used for search result height in mobile view */
+.h-\(screen-27\) {
+  height: calc(100vh - 6.75rem);
+}
+
+/* used for search result height in mobile sm (32.4) view */
+@screen md {
+  .sm\:h-\(screen-32\) {
+    height: calc(100vh - 8.1rem);
+  }
+}
+
+/* Progressive image */
+.home-profile,
+.home-profile img {
+  @apply rounded;
+}
+
+.book-cover,
+.book-cover img {
+  @apply border border-gray-200 rounded-lg;
+}
+
+.profile-page-image,
+.profile-page-image img {
+  @apply rounded-full;
+}

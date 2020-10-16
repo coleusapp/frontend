@@ -1,0 +1,15 @@
+query FetchUsers {
+  # (where: {sticky: {_eq: true}})
+  users {
+    name
+    username
+    xsmall
+    placeholder
+    thumbnail
+    book_users_aggregate {
+      aggregate {
+        count
+      }
+    }
+  }
+}

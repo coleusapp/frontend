@@ -1,0 +1,23 @@
+query BookSingle($slug: String) {
+  books(where: {slug: {_ilike: $slug}}) {
+    id
+    title
+    description
+    medium
+    thumbnail
+    pages(order_by: {order: asc}, where: {parent_id: {_is_null: true}}) {
+      id
+      title
+      pages(limit: 10) {
+        id
+        title
+      }
+    }
+    book_users {
+      user {
+        name
+        medium
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "coleus",
+  "version": "1.0.0",
+  "description": "Coleus frontend application",
+  "homepage": "https://github.com/amirmasoud/coleus",
+  "author": "Amirmasoud Sheydaei <amirmasoud.sheydaei@gmail.com> (https://amirmasoud.me)",
+  "private": true,
+  "scripts": {
+    "dev": "NUXT_HOST=0.0.0.0 NUXT_PORT=3000 nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+  },
+  "dependencies": {
+    "@nuxtjs/apollo": "^4.0.0-rc19",
+    "@nuxtjs/dotenv": "^1.4.0",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "core-js": "2",
+    "graphql-tag": "^2.10.3",
+    "lodash": "^4.17.15",
+    "mousetrap": "^1.6.5",
+    "nuxt": "^2.12.2",
+    "nuxt-lambda": "^0.5.3",
+    "vue-progressive-image": "^3.2.0"
+  },
+  "devDependencies": {
+    "@nuxt/components": "^0.3.3",
+    "@nuxtjs/eslint-config": "^2.0.2",
+    "@nuxtjs/eslint-module": "^1.1.0",
+    "@nuxtjs/google-analytics": "^2.2.3",
+    "@nuxtjs/router": "^1.5.0",
+    "@nuxtjs/tailwindcss": "^1.0.0",
+    "babel-eslint": "^10.1.0",
+    "cypress": "^4.9.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-nuxt": "^0.5.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.2"
+  }
+}
