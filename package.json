@@ -20,8 +20,7 @@
     "graphql-tag": "^2.10.3",
     "lodash": "^4.17.15",
     "mousetrap": "^1.6.5",
-    "nuxt": "^2.12.2",
-    "nuxt-lambda": "^0.5.3",
+    "nuxt": "^2.14.7",
     "vue-progressive-image": "^3.2.0"
   },
   "devDependencies": {
