@@ -1,6 +1,3 @@
-import dotenv from 'dotenv'
-dotenv.config()
-
 export default {
   mode: 'universal',
 
@@ -43,7 +40,6 @@ export default {
     '@nuxtjs/eslint-module',
     '@nuxtjs/tailwindcss',
     '@nuxt/components',
-    '@nuxtjs/dotenv',
     '@nuxtjs/router',
     ['@nuxtjs/google-analytics', { id: process.env.GOOGLE_ANALYTICS_ID }]
   ],
@@ -59,7 +55,7 @@ export default {
       author: 'Amirmasoud Sheydaei',
       theme_color: '#ffffff',
       lang: 'fa',
-      ogHost: process.env.FRONT_URL,
+      ogHost: process.env.FRONT_URL || 'http://coleus.test',
       nativeUI: true
     },
     manifest: {
@@ -71,11 +67,25 @@ export default {
   apollo: {
     clientConfigs: {
       default: {
-        httpEndpoint: process.env.GQL_URL
+        httpEndpoint:
+          process.env.GQL_URL || 'http://graphql.coleus.test/v1/graphql'
       },
       backend: {
-        httpEndpoint: process.env.BACKEND_URL
+        httpEndpoint:
+          process.env.BACKEND_URL || 'http://backend.coleus.test/graphql'
       }
     }
+  },
+
+  publicRuntimeConfig: {
+    appUrl: process.env.APP_URL || 'local',
+    appLocale: process.env.APP_LOCALE || 'fa',
+    frontUrl: process.env.FRONT_URL || 'http://coleus.test',
+    gqlUrl: process.env.GQL_URL || 'http://graphql.coleus.test/v1/graphql',
+    backendUrl: process.env.BACKEND_URL || 'http://backend.coleus.test/graphql',
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+  },
+  privateRuntimeConfig: {
+    googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID
   }
 }
