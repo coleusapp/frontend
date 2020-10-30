@@ -32,3 +32,11 @@ jobs:
     - name: Push the latest image
       run: docker push coleusapp/frontend:latest
 
+    - uses: akhileshns/heroku-deploy@v3.6.8
+      with:
+        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        heroku_app_name: "coleus-frontend-sleepy" #Must be unique in Heroku
+        heroku_email: ${{secrets.HEROKU_EMAIL}}
+        usedocker: true
+      env:
+        FRONTEND_TAG: latest
