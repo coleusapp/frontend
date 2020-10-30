@@ -1,5 +1,7 @@
 build:
+  config:
+    FRONTEND_TAG: latest
   docker:
-    web: Dockerfile
+    web: heroku/Dockerfile
 run:
   web: nuxt start

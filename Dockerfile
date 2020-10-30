@@ -1,5 +1,8 @@
+ARG PORT=3000
+
 # Dockerfile
 FROM node:14.15.0-alpine3.12
+LABEL maintainer="Amirmasoud Sheydaei <amirmasoud.sheydaei@gmail.com>"
 
 # create destination directory
 RUN mkdir -p /usr/src/nuxt-app
@@ -14,9 +17,9 @@ COPY . /usr/src/nuxt-app/
 RUN yarn install
 RUN yarn run build
 
-EXPOSE 3000
+EXPOSE $PORT
 
 ENV NUXT_HOST=0.0.0.0
-ENV NUXT_PORT=3000
+ENV NUXT_PORT=$PORT
 
 CMD [ "yarn", "start" ]
