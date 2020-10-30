@@ -12,31 +12,31 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      
+
     - name: Login to DockerHub
       run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
 
     - name: Get the version
       id: vars
       run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
-    
+
     - name: Build the tagged image
       run: docker build . --file Dockerfile --tag coleusapp/frontend:${{steps.vars.outputs.tag}}
-    
+
     - name: Push the tagged image
       run: docker push coleusapp/frontend:${{steps.vars.outputs.tag}}
-    
+
     - name: Build the latest image
       run: docker build . --file Dockerfile --tag coleusapp/frontend:latest
-    
+
     - name: Push the latest image
       run: docker push coleusapp/frontend:latest
 
     - uses: akhileshns/heroku-deploy@v3.6.8
       with:
         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-        heroku_app_name: "coleus-frontend-sleepy" #Must be unique in Heroku
+        heroku_app_name: "coleus-frontend-sleepy"
         heroku_email: ${{secrets.HEROKU_EMAIL}}
         usedocker: true
       env:
-        FRONTEND_TAG: latest
+        TAG: latest
