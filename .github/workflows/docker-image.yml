@@ -40,3 +40,4 @@ jobs:
         usedocker: true
       env:
         TAG: latest
+        HD_BACKEND_URL: "http://backend.coleus.app/graphql"

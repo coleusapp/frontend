@@ -1,6 +1,6 @@
 build:
   config:
-    FRONTEND_TAG: latest
+    TAG: latest
   docker:
     web: heroku/Dockerfile
 run:
