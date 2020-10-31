@@ -1,0 +1,25 @@
+{
+  "name": "coleus-frontend-sleepy",
+  "description": "Coleus.app frontend Nuxt.js application.",
+  "keywords": [
+    "js",
+    "vue.js",
+    "nuxt.js",
+    "docker"
+  ],
+  "repository": "https://github.com/coleusapp/frontend",
+  "logo": "https://raw.githubusercontent.com/amirmasoud/coleus/master/screenshots/logo.png",
+  "stack": "container",
+  "env": {
+    "GQL_URL": {
+      "description": "GraphQL URL.",
+      "value": "",
+      "required": true
+    },
+    "BACKEND_URL": {
+      "description": "Backend URL.",
+      "value": "",
+      "required": true
+    }
+  }
+}
