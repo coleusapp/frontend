@@ -1,5 +1,3 @@
-ARG PORT=3000
-
 # Dockerfile
 FROM node:14.15.0-alpine3.12
 LABEL maintainer="Amirmasoud Sheydaei <amirmasoud.sheydaei@gmail.com>"
@@ -20,6 +18,6 @@ RUN yarn run build
 EXPOSE $PORT
 
 ENV NUXT_HOST=0.0.0.0
-ENV NUXT_PORT=$PORT
+ENV NUXT_PORT=3000
 
 CMD [ "yarn", "start" ]

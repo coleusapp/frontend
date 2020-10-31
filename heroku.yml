@@ -1,7 +1,0 @@
-build:
-  config:
-    TAG: latest
-  docker:
-    web: heroku/Dockerfile
-run:
-  web: nuxt start
